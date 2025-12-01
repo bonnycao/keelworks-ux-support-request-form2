@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeelWorks – UX Research & Design Support Request</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+  <!-- HEADER + HERO -->
+  <header class="kw-header">
+    <div class="kw-header-inner">
+      <div class="kw-logo">
+        <div>
+          <a href="https://keelworks.org/" target="_blank"><img src="images/KeelWorks-logo.png" style="width:150px; height:auto"></a>
+        </div>
+        <div class="kw-logo-text">KeelWorks Foundation</div>
+      </div>
+      <nav class="kw-nav" aria-label="Primary navigation">
+        <a href="https://keelworks.org/">Home</a>
+        <a href="https://keelworks.org/about">About</a>
+        <a href="https://keelworks.org/get-involved">Get Involved</a>
+        <a href="https://keelworks.org/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- MAIN MULTI-STEP FORM -->
+  <main class="page-wrapper">
+    <div class="card">
+      <div class="card-banner">
+  <img src="images/UX Banner.png" style="padding:0px; width:100%; height:auto">
+
+      </div>
+      <div id="formContainer">
+        <h1>UX Research &amp; Design Support Request</h1>
+        <p class="subtitle">
+          Use this form to request UX research, design, or graphic arts support for your project.
+          Tell us what you need, who it's for, and your timeline. We’ll review your submission and
+          follow up with next steps.
+        </p>
+
+        <div class="progress-wrapper">
+          <div class="progress-top">
+            <span id="stepLabel">Step 1 of 4</span>
+            <span class="required-note">* Required</span>
+          </div>
+          <div class="progress-step-name" id="stepName">
+            Step 1 – Requestor Information
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <form id="uxSupportForm" novalidate>
+          <!-- STEP 1: Requestor Information -->
+          <div class="form-step active" data-step="1" data-step-name="Step 1 – Requestor Information">
+            <div class="section-title">1. Requestor Information</div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="name">Name<span class="required">*</span></label>
+                <input type="text" id="name" name="name" />
+                <div class="error-message">Please enter your name.</div>
+              </div>
+
+              <div class="field-group">
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" />
+                <div class="error-message">Please enter a valid email address.</div>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="org">Organization / Team<span class="required">*</span></label>
+              <input type="text" id="org" name="org" />
+              <div class="error-message">Please enter your organization or team.</div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Project Requirements (Overview + Details) -->
+          <div class="form-step" data-step="2" data-step-name="Step 2 – Project Requirements">
+            <div class="section-title">2. Project Overview</div>
+
+            <div class="field-group">
+              <label for="projectName">Project Name<span class="required">*</span></label>
+              <input type="text" id="projectName" name="projectName" />
+              <div class="error-message">Please enter a project name.</div>
+            </div>
+
+            <div class="field-group">
+              <label for="projectDescription">Brief Description of Your Project<span class="required">*</span></label>
+              <textarea id="projectDescription" name="projectDescription"></textarea>
+              <div class="error-message">Please add a short description of your project.</div>
+            </div>
+
+            <div class="field-group">
+              <label for="projectLinks">Project Links or Documents</label>
+              <input
+                type="text"
+                id="projectLinks"
+                name="projectLinks"
+                placeholder="e.g., website, Google Doc, Figma link"
+              />
+            </div>
+
+            <div class="section-title">3. Project Details</div>
+
+            <div class="field-group">
+              <label for="problem">What problem are you trying to solve?<span class="required">*</span></label>
+              <textarea id="problem" name="problem"></textarea>
+              <div class="error-message">Please describe the problem you are trying to solve.</div>
+            </div>
+
+            <div class="field-group">
+              <label for="targetUsers">Who are the target users?<span class="required">*</span></label>
+              <textarea id="targetUsers" name="targetUsers"></textarea>
+              <div class="error-message">Please describe your target users.</div>
+            </div>
+
+            <div class="field-group">
+              <label for="goals">Project Goals<span class="required">*</span></label>
+              <textarea id="goals" name="goals"></textarea>
+              <div class="error-message">Please describe your project goals.</div>
+            </div>
+
+            <div class="field-group">
+              <label for="successMetrics">How will success be measured?</label>
+              <textarea id="successMetrics" name="successMetrics"></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 3: Roles & Services + Timeline -->
+          <div class="form-step" data-step="3" data-step-name="Step 3 – Roles &amp; Services Needed">
+            <div class="section-title">4. Roles &amp; Services Needed</div>
+
+            <div class="field-group">
+              <label for="rolesCount">How many roles do you need for this project?<span class="required">*</span></label>
+              <select id="rolesCount" name="rolesCount">
+                <option value="">Select one</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="more">More</option>
+              </select>
+              <div class="error-message">Please select how many roles you need.</div>
+            </div>
+
+            <div class="field-group">
+              <label>What roles are you requesting?<span class="required">*</span></label>
+              <div class="checkbox-group" id="rolesGroup">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleUxResearch" name="roles" value="UX Research" />
+                  <label for="roleUxResearch">UX Research</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleUxDesign" name="roles" value="UX Design" />
+                  <label for="roleUxDesign">UX Design</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleUiDesign" name="roles" value="UI/Visual Design" />
+                  <label for="roleUiDesign">UI / Visual Design</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleGraphics" name="roles" value="Graphic Arts" />
+                  <label for="roleGraphics">Graphic Arts</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleUsability" name="roles" value="Usability Testing" />
+                  <label for="roleUsability">Usability Testing</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleIA" name="roles" value="Information Architecture" />
+                  <label for="roleIA">Information Architecture</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleContent" name="roles" value="Content / Copywriting" />
+                  <label for="roleContent">Content / Copywriting</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="roleOther" name="roles" value="Other" />
+                  <label for="roleOther">Other</label>
+                </div>
+              </div>
+              <div class="error-message" id="rolesError">Please select at least one role.</div>
+
+              <div id="otherRoleWrapper">
+                <label for="otherRole">Specify</label>
+                <input type="text" id="otherRole" name="otherRole" />
+              </div>
+            </div>
+
+            <div class="section-title">5. Timeline</div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="startDate">Requested Start Date<span class="required">*</span></label>
+                <input type="date" id="startDate" name="startDate" />
+                <div class="error-message">Please select a requested start date.</div>
+              </div>
+
+              <div class="field-group">
+                <label for="endDate">Requested Completion Date<span class="required">*</span></label>
+                <input type="date" id="endDate" name="endDate" />
+                <div class="error-message">Please select a requested completion date.</div>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="flexible">Is your timeline flexible?<span class="required">*</span></label>
+                <select id="flexible" name="flexible">
+                  <option value="">Select one</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="somewhat">Somewhat</option>
+                </select>
+                <div class="error-message">Please indicate if your timeline is flexible.</div>
+              </div>
+
+              <div class="field-group">
+                <label for="priority">Priority Level<span class="required">*</span></label>
+                <select id="priority" name="priority">
+                  <option value="">Select one</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+                <div class="error-message">Please select a priority level.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: Stakeholders + Notes -->
+          <div class="form-step" data-step="4" data-step-name="Step 4 – Stakeholders &amp; Notes">
+            <div class="section-title">6. Stakeholders (Optional)</div>
+
+            <div class="field-group">
+              <label>Primary Contact Person (Optional)</label>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="primaryContactName">Name</label>
+                <input type="text" id="primaryContactName" name="primaryContactName" />
+              </div>
+              <div class="field-group">
+                <label for="primaryContactEmail">Email</label>
+                <input type="email" id="primaryContactEmail" name="primaryContactEmail" />
+              </div>
+              <div class="field-group">
+                <label for="primaryContactPhone">Phone</label>
+                <input type="text" id="primaryContactPhone" name="primaryContactPhone" />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label>Additional Stakeholders (up to 3)</label>
+              <button type="button" id="addStakeholderBtn" class="link-button">
+                + Add additional stakeholder
+              </button>
+            </div>
+
+            <div id="additionalStakeholdersContainer"></div>
+
+            <div class="section-title">7. Additional Notes (Optional)</div>
+
+            <div class="field-group">
+              <label for="notes">Additional Notes</label>
+              <textarea id="notes" name="notes" placeholder="Any extra context or constraints."></textarea>
+            </div>
+          </div>
+
+          <!-- Nav buttons -->
+          <div class="form-actions">
+            <button type="button" id="backBtn" class="btn-secondary" disabled>Back</button>
+            <div class="btn-group-right">
+              <button type="button" id="resetBtn" class="btn-secondary">Clear</button>
+              <button type="button" id="nextBtn" class="btn-primary">Next</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- THANK YOU SCREEN -->
+      <div id="thankYou">
+        <h2>Thank you for your request.</h2>
+        <p>
+          Your project information has been sent to our UX coordination team.
+          We’ll review your needs, assess availability, and determine the best way to support you.
+        </p>
+        <p>
+          You can submit another request by refreshing the page, or return to the KeelWorks site.
+        </p>
+        <button id="closeBtn" class="btn-primary" style="margin-top: 1rem;">
+          Close &amp; Return to KeelWorks
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="kw-footer">
+    <div class="kw-footer-inner">
+      <div>
+        <div class="kw-footer-heading">Let's Connect!</div>
+        <div class="kw-footer-sub">Get inspiring stories in your inbox</div>
+        <form class="kw-footer-form" onsubmit="event.preventDefault();">
+          <input
+            type="email"
+            class="kw-footer-input"
+            placeholder="Email address"
+            aria-label="Email address"
+          />
+          <button class="kw-footer-button" type="submit">Subscribe</button>
+        </form>
+        <div class="kw-footer-legal">
+          KeelWorks Foundation © 2025.<br />
+          All rights reserved.<br />
+          KeelWorks is a 501(c)(3) charitable foundation (EIN: 80-0325606).
+        </div>
+      </div>
+      <div class="kw-footer-links">
+        <a href="https://keelworks.org/about">About Us</a>
+        <a href="https://keelworks.org/get-involved">Get Involved</a>
+        <a href="https://keelworks.org/careers">Careers</a>
+        <a href="https://keelworks.org/our-solutions">Our Solutions</a>
+        <a href="https://keelworks.org/blog">Blog</a>
+        <a href="https://keelworks.org/success-stories">Success Stories</a>
+        <a href="https://keelworks.org/faq">FAQ</a>
+        <a href="https://keelworks.org/contact">Contact Us</a>
+        <a href="https://keelworks.org/non-discrimination">Non-discrimination Policy</a>
+        <a href="https://keelworks.org/privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="kw-footer-bottom">
+      <div class="kw-social">
+        <div class="kw-social-icon">
+          <a href="https://www.linkedin.com/company/keelworks-foundation/" class="text-white hover:text-gray-500" target="_blank"><div class="p-2 border-2 rounded-full hover:border-gray-500 "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></div></a>
+
+        </div>
+        <div class="kw-social-icon">
+          <a href="https://www.youtube.com/@thekeelworksfundation8668" class="text-white hover:text-gray-500" target="_blank"><div class="p-2 border-2 rounded-full hover:border-gray-500"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></div></a>
+        </div>
+        <div class="kw-social-icon">
+<a href="https://x.com/keelworksthe" class="text-white hover:text-gray-500" target="_blank"><div class="p-2 border-2 rounded-full hover:border-gray-500"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></div></a>
+        </div>
+        <div class="kw-social-icon">
+<a href="https://www.facebook.com/TheKeelWorks" class="text-white hover:text-gray-500" target="_blank"><div class="p-2 border-2 rounded-full hover:border-gray-500"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></div></a>
+        </div>
+        <div class="kw-social-icon">
+<a href="https://www.instagram.com/thekeelworks/" class="text-white hover:text-gray-500" target="_blank"><div class="p-2 border-2 rounded-full hover:border-gray-500"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></div></a>
+        </div>
+      </div>
+      <div class="kw-footer-nav">
+        Follow KeelWorks on social to see new stories, tools, and opportunities.
+      </div>
+    </div>
+  </footer>
+<script src="js/form.js"></script>
+</body>
+</html>
